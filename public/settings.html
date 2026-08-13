@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - AnonyChat</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/settings.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="toastContainer" class="toast-container"></div>
+    
+    <div class="settings-container">
+        <div class="settings-header">
+            <button class="icon-btn" id="backBtn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="19" y1="12" x2="5" y2="12"/>
+                    <polyline points="12 19 5 12 12 5"/>
+                </svg>
+            </button>
+            <h1 data-i18n="settings">Settings</h1>
+        </div>
+        
+        <div class="settings-section">
+            <h2 class="settings-section-title" data-i18n="anonymous_identity">Anonymous Identity</h2>
+            <div class="settings-item">
+                <div class="settings-item-info">
+                    <div class="settings-item-label" data-i18n="anonymous_identity">Anonymous Identity</div>
+                    <div class="settings-item-description" id="anonymousId"></div>
+                </div>
+            </div>
+            <div class="settings-item">
+                <div class="settings-item-info">
+                    <div class="settings-item-label" data-i18n="email">Email</div>
+                    <div class="settings-item-description">Your account email</div>
+                </div>
+                <input type="email" class="input" id="email" style="max-width: 250px;">
+            </div>
+            <button class="btn btn-primary" id="saveEmailBtn" data-i18n="save">Save</button>
+        </div>
+        
+        <div class="settings-section">
+            <h2 class="settings-section-title" data-i18n="language">Language</h2>
+            <div class="settings-item">
+                <div class="settings-item-info">
+                    <div class="settings-item-label" data-i18n="language">Language</div>
+                    <div class="settings-item-description">Choose your preferred language</div>
+                </div>
+                <select class="language-select" id="languageSelect">
+                    <option value="en" data-i18n="english">English</option>
+                    <option value="id" data-i18n="indonesian">Indonesian</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="settings-section">
+            <h2 class="settings-section-title" data-i18n="notifications">Notifications</h2>
+            <div class="settings-item">
+                <div class="settings-item-info">
+                    <div class="settings-item-label" data-i18n="notifications">Notifications</div>
+                    <div class="settings-item-description">Enable or disable notifications</div>
+                </div>
+                <div class="toggle-switch" id="notificationsToggle"></div>
+            </div>
+            <div class="settings-item">
+                <div class="settings-item-info">
+                    <div class="settings-item-label" data-i18n="sound">Sound</div>
+                    <div class="settings-item-description">Enable or disable sound</div>
+                </div>
+                <div class="toggle-switch" id="soundToggle"></div>
+            </div>
+        </div>
+        
+        <div class="settings-section">
+            <h2 class="settings-section-title" data-i18n="blocked_users">Blocked Users</h2>
+            <div id="blockedUsersList"></div>
+        </div>
+        
+        <div class="settings-section">
+            <h2 class="settings-section-title" data-i18n="security">Security</h2>
+            <button class="btn btn-danger" id="logoutBtn" data-i18n="logout">Logout</button>
+        </div>
+        
+        <div class="danger-zone">
+            <h3 class="danger-zone-title" data-i18n="delete_account">Delete Account</h3>
+            <p style="margin-bottom: 16px; color: var(--text-secondary);">
+                This action is permanent and cannot be undone.
+            </p>
+            <button class="btn btn-danger" id="deleteAccountBtn" data-i18n="delete_account">Delete Account</button>
+        </div>
+    </div>
+    
+    <script src="/js/i18n.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/settings.js"></script>
+</body>
+</html>
