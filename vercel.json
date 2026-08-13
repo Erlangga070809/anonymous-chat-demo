@@ -19,10 +19,5 @@
       "src": "/(.*)",
       "dest": "public/$1"
     }
-  ],
-  "env": {
-    "DATABASE_URL": "@anonymous-chat-db",
-    "SESSION_SECRET": "@anonymous-chat-session",
-    "NODE_ENV": "production"
-  }
+  ]
 }
