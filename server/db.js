@@ -3,15 +3,18 @@ const config = require('./config');
 
 const pool = new Pool({
   connectionString: config.databaseUrl,
-  ssl: config.isProduction ? { rejectUnauthorized: false } : false,
-  max: 20,
+  ssl: {
+    rejectUnauthorized: false
+  },
+  max: 10,
   idleTimeoutMillis: 30000,
-  connectionTimeoutMillis: 2000,
+  connectionTimeoutMillis: 10000,
+  maxUses: 7500,
+  allowExitOnIdle: true
 });
 
 pool.on('error', (err) => {
   console.error('Unexpected error on idle client', err);
-  process.exit(-1);
 });
 
 const query = async (text, params) => {
