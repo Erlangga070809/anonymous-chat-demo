@@ -1,0 +1,250 @@
+.admin-container {
+  display: flex;
+  min-height: 100dvh;
+  background: var(--bg-primary);
+}
+
+.admin-sidebar {
+  width: 250px;
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+.admin-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 24px;
+  padding: 0 12px;
+}
+
+.admin-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  font-size: 0.95rem;
+  width: 100%;
+  text-align: left;
+}
+
+.admin-nav-item:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.admin-nav-item.active {
+  background: var(--accent-light);
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.admin-main {
+  flex: 1;
+  margin-left: 250px;
+  padding: 24px;
+}
+
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.admin-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.admin-table {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.admin-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.admin-table th {
+  background: var(--bg-tertiary);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+.admin-table tr:hover {
+  background: var(--bg-tertiary);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.badge-active {
+  background: #ecfdf5;
+  color: var(--success);
+}
+
+.badge-banned {
+  background: var(--danger-light);
+  color: var(--danger);
+}
+
+.badge-suspended {
+  background: #fffbeb;
+  color: var(--warning);
+}
+
+.badge-pending {
+  background: #eff6ff;
+  color: #3b82f6;
+}
+
+.badge-resolved {
+  background: #ecfdf5;
+  color: var(--success);
+}
+
+.badge-rejected {
+  background: var(--danger-light);
+  color: var(--danger);
+}
+
+.action-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-size: 0.85rem;
+  margin-right: 8px;
+  transition: all var(--transition-normal);
+}
+
+.action-btn.ban {
+  background: var(--danger);
+  color: white;
+}
+
+.action-btn.unban {
+  background: var(--success);
+  color: white;
+}
+
+.action-btn.suspend {
+  background: var(--warning);
+  color: white;
+}
+
+.search-input {
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  width: 300px;
+  max-width: 100%;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .admin-sidebar {
+    width: 60px;
+    padding: 12px;
+  }
+  
+  .admin-nav-item span {
+    display: none;
+  }
+  
+  .admin-main {
+    margin-left: 60px;
+    padding: 16px;
+  }
+  
+  .admin-logo {
+    font-size: 1.2rem;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  
+  .stat-value {
+    font-size: 1.5rem;
+  }
+  
+  .admin-table {
+    overflow-x: auto;
+  }
+}
